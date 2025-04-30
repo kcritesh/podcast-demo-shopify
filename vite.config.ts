@@ -1,9 +1,9 @@
-import {defineConfig} from 'vite';
-import {hydrogen} from '@shopify/hydrogen/vite';
-import {oxygen} from '@shopify/mini-oxygen/vite';
-import {vitePlugin as remix} from '@remix-run/dev';
+import { defineConfig } from 'vite';
+import { hydrogen } from '@shopify/hydrogen/vite';
+import { oxygen } from '@shopify/mini-oxygen/vite';
+import { vitePlugin as remix } from '@remix-run/dev';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import tailwindcss from '@tailwindcss/vite';
+// import tailwindcss from '@tailwindcss/vite';
 
 declare module '@remix-run/server-runtime' {
   interface Future {
@@ -13,7 +13,7 @@ declare module '@remix-run/server-runtime' {
 
 export default defineConfig({
   plugins: [
-    tailwindcss(),
+    // tailwindcss(),
     hydrogen(),
     oxygen(),
     remix({
@@ -29,6 +29,9 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  css: {
+    postcss: './postcss.config.js'
+  },
   build: {
     // Allow a strict Content-Security-Policy
     // withtout inlining assets as base64:
