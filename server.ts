@@ -4,7 +4,7 @@
 // eslint-disable-next-line import/no-unresolved
 import * as remixBuild from 'virtual:remix/server-build';
 import {storefrontRedirect} from '@shopify/hydrogen';
-import {createRequestHandler} from '@shopify/remix-oxygen';
+import {createRequestHandler} from '@remix-run/vercel';
 import {createAppLoadContext} from '~/lib/context';
 
 /**
